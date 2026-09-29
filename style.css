@@ -1,0 +1,252 @@
+/* ========== BASIC RESET ========== */
+/* Removes default spacing so we start from a clean slate */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Makes clicking a menu link scroll smoothly */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ========== COLORS (easy to change here!) ========== */
+:root {
+  --dark: #1f2a44;        /* dark navy */
+  --accent: #e07a5f;      /* orange highlight */
+  --light: #f7f7f7;       /* light grey background */
+  --white: #ffffff;
+  --text: #333333;
+}
+
+/* ========== GENERAL STYLES ========== */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ========== NAVIGATION BAR ========== */
+.navbar {
+  display: flex;                   /* puts logo and menu side by side */
+  justify-content: space-between;  /* logo on left, menu on right */
+  align-items: center;
+  padding: 15px 8%;
+  background-color: var(--dark);
+  position: sticky;                /* stays at the top when scrolling */
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  color: var(--white);
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;                /* removes bullet points */
+  gap: 25px;
+}
+
+.navbar nav a {
+  color: var(--white);
+}
+
+.navbar nav a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* ========== HERO SECTION ========== */
+.hero {
+  min-height: 90vh;                /* almost full screen height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;         /* centers content vertically */
+  padding: 0 8%;
+  background-color: var(--dark);
+  color: var(--white);
+}
+
+.hero-small {
+  color: var(--accent);
+  font-size: 1.1rem;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+}
+
+.hero-role {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.hero-text {
+  max-width: 500px;                /* keeps lines a readable length */
+  margin-bottom: 25px;
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  width: fit-content;
+  padding: 12px 28px;
+  background-color: var(--accent);
+  color: var(--white);
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: #c9664c;
+  text-decoration: none;
+}
+
+/* ========== SECTIONS (About, Skills, Tools, Projects, Contact) ========== */
+.section {
+  padding: 70px 8%;
+}
+
+/* A different background color to separate sections */
+.section-alt {
+  background-color: var(--light);
+}
+
+.section h2 {
+  font-size: 2rem;
+  color: var(--dark);
+  margin-bottom: 10px;
+}
+
+.section-intro {
+  color: var(--text);
+  margin-bottom: 30px;
+}
+
+.section p {
+  max-width: 700px;
+  margin-bottom: 10px;
+}
+
+/* ========== SKILLS ========== */
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;                 /* moves to next line if no space */
+  gap: 12px;
+  list-style: none;
+}
+
+.skills-list li {
+  background-color: var(--dark);
+  color: var(--white);
+  padding: 8px 18px;
+  border-radius: 20px;
+}
+
+/* ========== TOOLS ========== */
+.tool-grid {
+  display: grid;
+  /* Makes as many columns as will fit, each at least 220px wide */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 22px;
+}
+
+.tool-card {
+  background-color: var(--white);
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  padding: 25px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tool-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(31, 42, 68, 0.15);
+}
+
+.tool-icon {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--accent);
+  color: var(--white);
+  border-radius: 50%;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.tool-card h3 {
+  color: var(--dark);
+  margin-bottom: 8px;
+}
+
+.tool-card p {
+  font-size: 0.95rem;
+}
+
+/* ========== PROJECTS ========== */
+.project-grid {
+  display: grid;
+  /* Makes as many columns as will fit, each at least 250px wide */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.project {
+  padding: 25px;
+  border: 1px solid #dddddd;
+  border-left: 5px solid var(--accent);
+  border-radius: 5px;
+}
+
+.project h3 {
+  color: var(--dark);
+  margin-bottom: 8px;
+}
+
+.project p {
+  margin-bottom: 12px;
+}
+
+/* ========== FOOTER ========== */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--dark);
+  color: var(--white);
+}
+
+/* ========== MOBILE FRIENDLY ========== */
+/* These rules only apply on screens 600px wide or smaller */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .navbar ul {
+    gap: 15px;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+}
+
